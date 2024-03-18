@@ -105,18 +105,18 @@ AUTHENTICATION_BACKENDS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    # {
+        # 'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    # },
+    # {
+        # 'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    # },
 ]
 
 
@@ -176,14 +176,14 @@ SITE_ID=1
 
 ACCOUNT_AUTHENTICATION_METHOD="username_email"
 ACCOUNT_USERNAME_REQUIRED=True
-LOGIN_REDIRECT_URL='profile'
+LOGIN_REDIRECT_URL='home'
 ACCOUNT_EMAIL_VERIFICATION='mandatory'
 ACCOUNT_UNIQUE_EMAIL=True
 ACCOUNT_EMAIL_REQUIRED=True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS=7
 ACCOUNT_EMAIL_CONFIRMATION_COOLDOWN=60
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL="home"
-ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL="profile"
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL="home"
 
 SOCIALACCOUNT_AUTO_SIGNUP=False
 SOCIALACCOUNT_STORE_TOKENS=True

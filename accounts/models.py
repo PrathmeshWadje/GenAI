@@ -22,12 +22,5 @@ class User(AbstractUser):
         validators=[validate_username],  # Apply your custom validator
     )
 
-    # Override the save method to generate a unique username if not provided
-    def save(self, *args, **kwargs):
-        if not self.username:
-            # Generate a unique username based on a UUID
-            self.username = slugify(uuid.uuid4().hex)[:30]  # Truncate to max_length
-        super().save(*args, **kwargs)
-
     def __str__(self):
         return self.username

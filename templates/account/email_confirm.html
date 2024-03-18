@@ -1,0 +1,13 @@
+{% extends './base.html' %}{% load static %}
+{% block form_title %}Confirm Email Address{% endblock %}
+{% block form_description %}Please confirm that <span class="text-primary">{{ confirmation.email_address.email }}</span> is an email address for <span class="text-primary">{{ confirmation.email_address.user.first_name }} {{ confirmation.email_address.user.last_name }}</span>.{% endblock %}
+{% block content %}
+<div class="container mx-auto space-x-1 flex justify-center p-5">
+<form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+	{% csrf_token %}
+	<button type="submit" class="btn btn-primary">
+		Confirm
+	</button>
+</form>
+</div>
+{% endblock %}
