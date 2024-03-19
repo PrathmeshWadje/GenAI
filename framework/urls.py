@@ -18,10 +18,18 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import path, re_path, include
 from django.views.static import serve
+from django.shortcuts import render, redirect
 
+# Home page view
+
+def home(request):
+    if request.user.is_authenticated:
+        return render(request, 'home.html')
+    return redirect('account_login')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home, name='home'),
     path('', include('allauth.urls')),
 
     re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
